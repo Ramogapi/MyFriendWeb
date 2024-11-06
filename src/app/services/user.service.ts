@@ -28,7 +28,7 @@ export class UserService {
   processBaseUrl() {
     console.log("Web app host URL" + window.location.origin);
     if(window.location.origin == "http://localhost:4200"){
-        this.baseUrl = "https://localhost:7179/api/User";
+        this.baseUrl = "https://localhost:7251/api/User";
     } else {
         this.baseUrl = "https://mi.frand.net/api/User";
     }

@@ -14,7 +14,7 @@ export class ApplicationService {
   processBaseUrl() {
     console.log("Web app host URL" + window.location.origin);
     if(window.location.origin == "http://localhost:4200"){
-        this.baseUrl = "https://localhost:7179/api/Application";
+        this.baseUrl = "https://localhost:7251/api/Application";
     } else {
         this.baseUrl = "https://mi.frand.net/api/Application";
     }

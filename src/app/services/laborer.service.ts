@@ -21,7 +21,7 @@ export class LaborerService {
   processBaseUrl() {
     console.log("Web app host URL" + window.location.origin);
     if(window.location.origin == "http://localhost:4200"){
-        this.baseUrl = "https://localhost:7179/api/Laborer";
+        this.baseUrl = "https://localhost:7251/api/Laborer";
     } else {
         this.baseUrl = "https://mi.frand.net/api/Laborer";
     }
