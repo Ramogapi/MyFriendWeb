@@ -1,0 +1,10 @@
+<mat-dialog-content>
+    <mat-label><span>{{ data.title }}</span></mat-label>
+    <mat-icon (click)="onClose()" aria-hidden="false" aria-label="close icon">close</mat-icon>    
+    <div mat-dialog-content>
+        {{ data.content }}
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+	<button mat-raised-button color="primary" (click)="onClose()" tabindex="1">Ok</button>
+</mat-dialog-actions>

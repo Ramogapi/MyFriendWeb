@@ -1,0 +1,27 @@
+<form class="form" [formGroup]="frmDocument">
+    <p class="alert alert-danger" style="text-align: center;">{{message}}</p>
+    <div class="row">
+        <div class="column">
+            <mat-form-field class="form-field">
+                <mat-label>Document Type</mat-label>
+                <mat-select [(ngModel)]="model.typeCode" name="typeCode"
+                id="typeCode" formControlName="typeCode" required>
+                    <mat-option *ngFor="let documentType of documentTypes" [value]="documentType.code">
+                      {{documentType.name}}
+                    </mat-option>
+                  </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="column">
+            <div>
+                <app-attachment #AttachmentComponent (processFiles)="processFiles($event)" [labelName]="labelName"></app-attachment>
+              </div>
+        </div>
+    </div>
+    <div class="row">
+        <mat-card-actions>
+            <button mat-raised-button (click)="submit()" 
+        class="nav-btn pull-right" [disabled]="!frmDocument.valid">Add</button>
+        </mat-card-actions>
+    </div>
+</form>

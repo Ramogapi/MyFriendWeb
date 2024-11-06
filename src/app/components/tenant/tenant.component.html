@@ -1,0 +1,61 @@
+<!-- Navbar -->
+<div class="my-friend-top">
+    <div class="my-friend-bar my-friend-theme-d2 my-friend-left-align my-friend-large">
+     <a class="my-friend-bar-item my-friend-button my-friend-hide-medium my-friend-hide-large my-friend-right my-friend-padding-large my-friend-hover-white my-friend-large my-friend-theme-d2" href="javascript:void(0);" (click)="openNav()"><i class="fa fa-bars"></i></a>
+     <a href="javascript:void(0)" class="my-friend-bar-item my-friend-button my-friend-padding-large my-friend-theme-d4"><i class="fa fa-wifi my-friend-margin-right"></i>Airth</a>
+     <span class="my-friend-bar-item my-friend-hide-small my-friend-padding-large">Welcome, {{ userName }}</span>
+     <div class="my-friend-left">
+      <div class="my-friend-dropdown-hover my-friend-hide-small">
+        <button class="my-friend-button my-friend-padding-large" title="Work"><i class="fa fa-briefcase"></i></button>     
+        <div class="my-friend-dropdown-content-left my-friend-card-4 my-friend-bar-block" style="width:300px">
+          <a routerLink="tenant-request" class="my-friend-bar-item my-friend-button">Create Request</a>
+          <a routerLink="laborer-search" class="my-friend-bar-item my-friend-button">Search Laborers</a>
+        </div>
+      </div>
+     </div>
+     <div class="my-friend-right">
+      <div class="my-friend-search-container">
+        <form>
+          <input type="text" placeholder="Search.." name="search">
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+      <div class="my-friend-dropdown-hover my-friend-hide-small">
+        <button class="my-friend-button my-friend-padding-large" title="Messages"><i class="fa fa-envelope"></i><span class="my-friend-badge my-friend-right my-friend-small my-friend-red">2</span></button>     
+        <div class="my-friend-dropdown-content my-friend-card-4 my-friend-bar-block" style="width:300px">
+          <a href="javascript:void(0)" class="my-friend-bar-item my-friend-button">Mr Paul Smith: Hi there, did...</a>
+          <a href="javascript:void(0)" class="my-friend-bar-item my-friend-button">Ms Jane McDonald: You pro...</a>
+        </div>
+      </div>
+      <div class="my-friend-dropdown-hover my-friend-hide-small">
+        <button class="my-friend-button my-friend-padding-large" title="Notifications"><i class="fa fa-bell"></i><span class="my-friend-badge my-friend-right my-friend-small my-friend-red">3</span></button>     
+        <div class="my-friend-dropdown-content my-friend-card-4 my-friend-bar-block" style="width:300px">
+          <a href="javascript:void(0)" class="my-friend-bar-item my-friend-button">One new friend request</a>
+          <a href="javascript:void(0)" class="my-friend-bar-item my-friend-button">John Doe posted on your wall</a>
+          <a href="javascript:void(0)" class="my-friend-bar-item my-friend-button">Jane likes your post</a>
+        </div>
+      </div>
+      <div class="my-friend-dropdown-hover my-friend-hide-small">
+        <button class="my-friend-button my-friend-padding-large" title="Account"><img [src]="profilePicture.source" class="my-friend-circle" style="height:23px;width:23px" alt="Avatar"></button>     
+        <div class="my-friend-dropdown-content my-friend-card-4 my-friend-bar-block" style="width:160px">
+          <a routerLink="tenant-account" class="my-friend-bar-item my-friend-button">Account</a>
+          <a routerLink="tenant-friends" class="my-friend-bar-item my-friend-button">Friends</a>
+          <a routerLink="/" class="my-friend-bar-item my-friend-button">Signout</a>
+        </div>
+      </div>
+     </div>
+    </div>
+   </div>
+
+  <div class="my-friend-container my-friend-content" style="max-width:1400px;margin-top:80px">
+    <router-outlet></router-outlet>
+  </div>
+  <br>
+  
+   <footer class="my-friend-container my-friend-theme-d3 my-friend-padding-16">
+     <h5>Footer</h5>
+   </footer>
+   
+   <footer class="my-friend-container my-friend-theme-d5">
+     <p>Powered by <a href="https://www.tracebit.com" target="_blank">First Bit</a></p>
+   </footer>  

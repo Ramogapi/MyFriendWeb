@@ -1,0 +1,22 @@
+    <form class="form" [formGroup]="frmBankCard">
+        <p class="alert alert-danger" style="text-align: center;">{{message}}</p>
+        <div class="row">
+            <div class="column">
+                <mat-form-field class="form-field">
+                    <input matInput [(ngModel)]="model.cardNumber" placeholder="Card Number" formControlName="cardNumber" required>
+                  </mat-form-field>
+                  <mat-form-field class="form-field">
+                      <input matInput [(ngModel)]="model.expiryDate" placeholder="Expiry Date" formControlName="expiryDate" required>
+                  </mat-form-field>
+            </div>
+            <div class="column">
+                  <mat-form-field class="form-field">
+                    <input matInput [(ngModel)]="model.cvv" placeholder="CVV" formControlName="cvv" required>
+                </mat-form-field>
+            </div>
+        </div>
+    <mat-card-actions>
+        <button mat-raised-button (click)="submit()" 
+        class="nav-btn pull-right" [disabled]="!frmBankCard.valid">Save</button>
+    </mat-card-actions>
+    </form>

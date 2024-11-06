@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="form-container">
+        <form #itemForm="ngForm" (ngSubmit)="submit()" [formGroup]="submitForm" novalidate class="display: inline-block;">
+                <span style="align-items: center;"><mat-icon>wifi_tethering</mat-icon></span>
+                <h3 style="text-align: center;">Sign in</h3>
+                <p style="text-align: center;">Connect with laborers or customers who want to work with you</p>
+                <p class="alert alert-danger" style="text-align: center;">{{message}}</p>
+                <input type="text" [(ngModel)]="model.username" name="username"
+                id="username" formControlName="username" placeholder="Username">
+                    <div *ngIf="submitted && f['username'].errors" class="alert alert-danger">
+                    <div *ngIf="f['username'].errors['required']">Username is required</div>
+                </div>
+                <input type="password" [(ngModel)]="model.password" name="password"
+             id="password" formControlName="password" placeholder="Password">
+             <div *ngIf="submitted && f['password'].errors" class="alert alert-danger">
+              <div *ngIf="f['password'].errors['required']">Password is required</div>
+            </div>
+                <a routerLink="/register" style="float: left;font-size: small;padding: 5px;">Sign up</a>
+                <a routerLink="/forgot-password" style="float: right;font-size: small;padding: 5px;">Forgot password?</a>
+                
+                <input type="submit" value="Get Started" />
+                <div class="or-line-divider">
+                    <p>Or sign in with</p>
+                </div>
+                <div class="bottom-container">
+                    <a href="#" class="fb btn">
+                      <i class="fa fa-facebook fa-fw"></i>
+                     </a>
+                    <a href="#" class="twitter btn">
+                      <i class="fa fa-twitter fa-fw"></i>
+                    </a>
+                    <a href="#" class="google btn"><i class="fa fa-google fa-fw">
+                      </i>
+                    </a>
+                </div>
+        </form>
+    </div>
+</div>

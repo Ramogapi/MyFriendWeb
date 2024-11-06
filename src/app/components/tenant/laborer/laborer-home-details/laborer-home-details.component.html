@@ -1,0 +1,83 @@
+<div class="my-friend-card my-friend-round my-friend-white">
+    <div class="my-friend-container">
+     <h4 class="my-friend-center">My Profile</h4>
+     <p class="my-friend-center"><img [src]="profilePicture.source" class="my-friend-circle" style="height:106px;width:106px" alt="Avatar"></p>
+     <hr>
+     <p><i class="fa fa-pencil fa-fw my-friend-margin-right my-friend-text-theme"></i> Designer, UI</p>
+     <p><i class="fa fa-home fa-fw my-friend-margin-right my-friend-text-theme"></i> London, UK</p>
+     <p><i class="fa fa-birthday-cake fa-fw my-friend-margin-right my-friend-text-theme"></i> April 1, 1988</p>
+     <p><i class="fa fa-comments fa-fw my-friend-margin-right my-friend-text-theme"></i>{{model.biography}} </p>
+    </div>
+  </div>
+  <br>
+  
+  <div class="my-friend-card my-friend-round">
+    <div class="my-friend-white">
+      <button (click)="myFunction(0)" class="my-friend-button my-friend-block my-friend-theme-l1 my-friend-left-align"><i class="fa fa-briefcase fa-fw my-friend-margin-right"></i> My Requests</button>
+      <div #Demo0 class="my-friend-hide my-friend-container">
+        <p>Some text..</p>
+      </div>
+      <button (click)="myFunction(1)" class="my-friend-button my-friend-block my-friend-theme-l1 my-friend-left-align"><i class="fa fa-circle-o-notch fa-fw my-friend-margin-right"></i> My Activities</button>
+      <div #Demo1 class="my-friend-hide my-friend-container">
+        <p>Some text..</p>
+      </div>
+      <button (click)="myFunction(2)" class="my-friend-button my-friend-block my-friend-theme-l1 my-friend-left-align"><i class="fa fa-calendar-check-o fa-fw my-friend-margin-right"></i> My Calenda</button>
+      <div #Demo2 class="my-friend-hide my-friend-container">
+        <p>Some other text..</p>
+      </div>
+      <button (click)="myFunction(3)" class="my-friend-button my-friend-block my-friend-theme-l1 my-friend-left-align"><i class="fa fa-users fa-fw my-friend-margin-right"></i> My Portfolio</button>
+      <div #Demo3 class="my-friend-hide my-friend-container">
+     <div class="my-friend-row-padding">
+     <br>
+       <div class="my-friend-half">
+         <img src="/images/lights.jpg" style="width:100%" class="my-friend-margin-bottom">
+       </div>
+       <div class="my-friend-half">
+         <img src="/images/nature.jpg" style="width:100%" class="my-friend-margin-bottom">
+       </div>
+       <div class="my-friend-half">
+         <img src="/images/mountains.jpg" style="width:100%" class="my-friend-margin-bottom">
+       </div>
+       <div class="my-friend-half">
+         <img src="/images/forest.jpg" style="width:100%" class="my-friend-margin-bottom">
+       </div>
+       <div class="my-friend-half">
+         <img src="/images/nature.jpg" style="width:100%" class="my-friend-margin-bottom">
+       </div>
+       <div class="my-friend-half">
+         <img src="/images/snow.jpg" style="width:100%" class="my-friend-margin-bottom">
+       </div>
+     </div>
+      </div>
+    </div>      
+  </div>
+  <br>
+  
+  <div class="my-friend-card my-friend-round my-friend-white my-friend-hide-small">
+    <div class="my-friend-container">
+      <p>Interests</p>
+      <p>
+        <span class="my-friend-tag my-friend-small my-friend-theme-d5">News</span>
+        <span class="my-friend-tag my-friend-small my-friend-theme-d4">W3Schools</span>
+        <span class="my-friend-tag my-friend-small my-friend-theme-d3">Labels</span>
+        <span class="my-friend-tag my-friend-small my-friend-theme-d2">Games</span>
+        <span class="my-friend-tag my-friend-small my-friend-theme-d1">Friends</span>
+        <span class="my-friend-tag my-friend-small my-friend-theme">Games</span>
+        <span class="my-friend-tag my-friend-small my-friend-theme-l1">Friends</span>
+        <span class="my-friend-tag my-friend-small my-friend-theme-l2">Food</span>
+        <span class="my-friend-tag my-friend-small my-friend-theme-l3">Design</span>
+        <span class="my-friend-tag my-friend-small my-friend-theme-l4">Art</span>
+        <span class="my-friend-tag my-friend-small my-friend-theme-l5">Photos</span>
+      </p>
+    </div>
+  </div>
+  <br>
+  
+  <!-- Alert Box -->
+  <div class="my-friend-container my-friend-display-container my-friend-round my-friend-theme-l4 my-friend-border my-friend-theme-border my-friend-margin-bottom my-friend-hide-small">
+    <span onclick="this.parentElement.style.display='none'" class="my-friend-button my-friend-theme-l3 my-friend-display-topright">
+      <i class="fa fa-remove"></i>
+    </span>
+    <p><strong>Hey!</strong></p>
+    <p>People are looking at your profile. Find out who.</p>
+  </div>

@@ -1,1 +1,120 @@
 /* You can add global styles to this file, and also import other style files */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+img {
+  display: unset!important;
+}
+
+.mat-simple-snackbar {
+    font-size: 1.2em;
+    color: white;
+  }
+  
+  .snackbar-error {
+    background-color: red;
+  }
+  
+  .snackbar-success {
+    background-color: green;
+  }
+  
+  .snackbar-info {
+    background-color: blue;
+  }
+
+  /* Tool Tip */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+.tooltip .tooltip-text {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 2;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+a.disabled {
+  color: gray;
+  cursor: not-allowed;
+  text-decoration: underline;
+}
+
+/* Search */
+.my-friend-right .my-friend-search-container {
+  float: left;
+}
+
+.my-friend-right input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+  color: #000;
+}
+
+.my-friend-right .my-friend-search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.my-friend-right .my-friend-search-container button:hover {
+  background: #ccc;
+}
+
+@media screen and (max-width: 600px) {
+  .my-friend-right .my-friend-search-container {
+    float: none;
+  }
+  .my-friend-right input[type=text], .my-friend-right .my-friend-search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .my-friend-right input[type=text] {
+    border: 1px solid #ccc;  
+  }
+}

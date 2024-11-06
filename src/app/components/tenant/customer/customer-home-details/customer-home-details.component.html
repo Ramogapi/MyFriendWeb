@@ -1,0 +1,58 @@
+<div class="my-friend-card my-friend-round my-friend-white">
+    <div class="my-friend-container">
+     <h4 class="my-friend-center">My Profile</h4>
+     <p class="my-friend-center"><img [src]="profilePicture.source" class="my-friend-circle" style="height:106px;width:106px" alt="Avatar"></p>
+     <hr>
+     <p><i class="fa fa-pencil fa-fw my-friend-margin-right my-friend-text-theme"></i>{{model.gender === 'Male' ? 'Mr': 'Ms'}}. {{model.fullname}} </p>
+     <p><i class="fa fa-home fa-fw my-friend-margin-right my-friend-text-theme"></i>{{model.role}} </p>
+     <p><i class="fa fa-birthday-cake fa-fw my-friend-margin-right my-friend-text-theme"></i>{{model.dateOfBirth}} </p>
+    </div>
+  </div>
+  <br>
+  
+  <div class="my-friend-card my-friend-round">
+    <div class="my-friend-white">
+      <button (click)="myFunction(1)" class="my-friend-button my-friend-block my-friend-theme-l1 my-friend-left-align"><i class="fa fa-briefcase fa-fw my-friend-margin-right"></i> My Requests</button>
+      <div #Demo1 class="my-friend-hide my-friend-container">
+        <p>Some text..</p>
+      </div>
+      <button (click)="myFunction(2)" class="my-friend-button my-friend-block my-friend-theme-l1 my-friend-left-align"><i class="fa fa-circle-o-notch fa-fw my-friend-margin-right"></i> My Activities</button>
+      <div #Demo2 class="my-friend-hide my-friend-container">
+        <p>Some text..</p>
+      </div>
+      <button (click)="myFunction(3)" class="my-friend-button my-friend-block my-friend-theme-l1 my-friend-left-align"><i class="fa fa-calendar-check-o fa-fw my-friend-margin-right"></i> My Calenda</button>
+      <div #Demo3 class="my-friend-hide my-friend-container">
+        <p>Some other text..</p>
+      </div>
+    </div>      
+  </div>
+  <br>
+  
+  <div class="my-friend-card my-friend-round my-friend-white my-friend-hide-small">
+    <div class="my-friend-container">
+      <p>Interests</p>
+      <div class="interests-container">
+        <div class="bucket-list" *ngFor="let interest of interests">
+            <span [ngClass]="'my-friend-tag my-friend-small my-friend-theme-d' + interest.id">{{interest.name}}</span>
+            <a (click)="deleteInterest(interest)"><i class="fa fa-times" aria-hidden="true"></i></a>
+        </div>
+        <div class="interests-search">
+            <input #search type="text" placeholder="Search..." [(ngModel)]="searchKey"/>                        
+        </div>
+        <div class="profession-list" *ngFor="let profession of professions | interests:searchKey">
+            <span>{{profession.name}}</span>
+            <a (click)="addInterest(profession)"><i class="fa fa-plus" aria-hidden="true"></i></a>
+        </div>
+    </div>
+    </div>
+  </div>
+  <br>
+  
+  <!-- Alert Box -->
+  <div class="my-friend-container my-friend-display-container my-friend-round my-friend-theme-l4 my-friend-border my-friend-theme-border my-friend-margin-bottom my-friend-hide-small">
+    <span onclick="this.parentElement.style.display='none'" class="my-friend-button my-friend-theme-l3 my-friend-display-topright">
+      <i class="fa fa-remove"></i>
+    </span>
+    <p><strong>Hey!</strong></p>
+    <p>People are looking at your profile. Find out who.</p>
+  </div>

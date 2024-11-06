@@ -1,0 +1,41 @@
+<mat-card>
+	<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="profession">
+          <th mat-header-cell *matHeaderCellDef> Profession </th>
+          <td mat-cell *matCellDef="let element"> {{element.profession}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="level">
+          <th mat-header-cell *matHeaderCellDef> Level </th>
+          <td mat-cell *matCellDef="let element"> {{element.level}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="description">
+			<th mat-header-cell *matHeaderCellDef> Description </th>
+			<td mat-cell *matCellDef="let element"> {{element.description}} </td>
+		  </ng-container>
+
+		  <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> Actions </th>
+            <td mat-cell *matCellDef="let element">
+              <a href="javascript:void(0)" (click)="view(element.id)" class="action tooltip">
+				<span class="tooltip-text">View</span>
+                <i class="fa fa-eye" aria-hidden="true"></i>
+              </a>&nbsp;
+              <a href="javascript:void(0)" (click)="delete(element.id, element.description)" class="action tooltip">
+				<span class="tooltip-text">Delete</span>
+                <i class="fa fa-trash" aria-hidden="true"></i>
+              </a></td>
+          </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+	  <br/>
+	  <app-userskill #UserskillComponent (ngOnInit)="ngOnInit()"></app-userskill>
+    <mat-card-actions>
+        <button mat-button (click)="back()">Back</button>
+		<button mat-raised-button (click)="next()" 
+        class="nav-btn pull-right" [disabled]="dataSource.length < 1">Next</button>
+    </mat-card-actions>
+</mat-card>

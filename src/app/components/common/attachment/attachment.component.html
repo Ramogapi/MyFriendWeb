@@ -1,0 +1,13 @@
+<mat-form-field style="width: 100%;">
+        <mat-label>{{labelName}}</mat-label>
+<button mat-icon-button matPrefix (click)="onClick($event)">
+    <mat-icon>attach_file</mat-icon>
+  </button>
+        <input type="text" readonly matInput [formControl]="upload" />
+        <input #fileUpload
+        type="file"
+        class="input-file-upload"
+        (change)="onFileSelected($event)"
+        [(ngModel)]="fileName">
+        <mat-error>{{labelName}} is required</mat-error>
+</mat-form-field>

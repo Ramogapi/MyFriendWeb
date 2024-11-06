@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="form-container">
+        <span style="align-items: center;"><mat-icon>wifi_tethering</mat-icon></span>
+                <h3 style="text-align: center;">Sign Up</h3>
+                <p style="text-align: center;">Connect with laborers or customers who want to work with you</p>
+                <hr/>
+                <h6 style="text-align: center; font-size: 15pt" *ngIf="favourites.length > 0">Your interests</h6>
+                <div class="interests-container">
+                    <div class="bucket-list" *ngFor="let favourite of favourites">
+                        <span>{{favourite.name}}</span>
+                        <a (click)="deleteInterest(favourite)"><i class="fa fa-times" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="interests-search">
+                        <input #search type="text" placeholder="Search..." [(ngModel)]="searchKey"/>                        
+                    </div>
+                    <div class="bucket-list" *ngFor="let profession of professions | interests:searchKey">
+                        <span>{{profession.name}}</span>
+                        <a (click)="addInterest(profession)"><i class="fa fa-plus" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div class="registration-selection">
+                    <a routerLink="/" style="float: left;font-size: small;padding: 5px;">Sign in</a>
+                <a routerLink="/forgot-password" style="float: right;font-size: small;padding: 5px;">Forgot passord?</a>
+                <br/>
+                <br/>
+                <p style="font-weight: 500;">Please select who you want to be below:</p>
+                <br/>
+                <div class="bottom-container">
+                    <a (click)="customer()" class="button">
+                        <i class="fa fa-plug" aria-hidden="true"> Customer</i>
+                     </a>
+                    <a (click)="laborer()" class="button">
+                      <i class="fa fa-cogs" aria-hidden="true"> Laborer</i>
+                    </a>
+                </div>
+        </div>   
+    </div>
+</div>

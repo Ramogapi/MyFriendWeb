@@ -1,0 +1,125 @@
+
+.container {
+    min-height: 100vh;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    background-image: url("/images/clouds/cloud7.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }  
+  
+  .alert {
+    --bs-alert-bg: transparent;
+    --bs-alert-padding-x: unset!important;
+    --bs-alert-padding-y: unset!important;
+    --bs-alert-margin-bottom: 1rem;
+    --bs-alert-color: inherit;
+    --bs-alert-border-color: transparent;
+    --bs-alert-border: unset!important;
+    --bs-alert-border-radius: var(--bs-border-radius);
+    --bs-alert-link-color: inherit;
+    position: relative;
+    color: var(--bs-alert-color);
+    background-color: var(--bs-alert-bg);
+    border: var(--bs-alert-border);
+    border-radius: var(--bs-alert-border-radius);
+}
+
+.alert-danger {
+    --bs-alert-color: #cc2424!important;
+    --bs-alert-bg: unset!important;
+    --bs-alert-border-color: var(--bs-danger-border-subtle);
+    --bs-alert-link-color: var(--bs-danger-text-emphasis);
+    font-size: small;
+    font-weight: 500;
+}
+
+table {
+  width: 100%;
+}
+
+.form-container {
+    background-color: white;
+    width: 50%;
+    margin: 0 auto;
+    float: left;
+    border: 1pt solid #ccc;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  }
+
+  .container:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .customer {
+    background-color: #166426;
+    color: white;
+  }
+  
+  .laborer {
+    background-color: #eb7712;
+    color: white;
+  }
+
+  .laborer .btn,
+  .customer .btn {
+    width: 50%;
+    padding: 10px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 4px;
+    opacity: 0.85;
+    font-size:  20px;
+    line-height: 20px;
+    text-align: center;
+  }
+
+  .column {
+    float: left;
+    width: 50%;
+    padding: 0 15px;
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .form {
+    width: 100%;
+  }
+  
+  .form-field {
+    width: 100%;
+  }
+
+  .action {
+    color: #005cbb;
+    font-size: large;
+  }
+
+  .view {
+    color: #f08e2b;
+    font-size: large;
+  }
+  
+  .download {
+    color: #4c6eb8;
+    font-size: large;
+  }
+  
+  .delete {
+    color: #dd4b39;
+    font-size: large;
+  }
+
+@media screen and (max-width: 650px) {
+
+}

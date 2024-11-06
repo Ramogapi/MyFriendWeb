@@ -1,0 +1,68 @@
+<mat-card>
+    <form class="form" [formGroup]="frmUserDetails">
+        <p class="alert alert-danger" style="text-align: center;">{{message}}</p>
+        <div class="row">
+            <div class="column">                
+                <mat-form-field class="form-field">
+                  <mat-label>Full name</mat-label>
+                    <input matInput [(ngModel)]="model.fullname" placeholder="Full name" formControlName="fullname" required>
+                  </mat-form-field>                  
+                  <mat-form-field class="form-field">
+                    <mat-label>Email</mat-label>
+                    <input matInput [(ngModel)]="model.email" placeholder="Email" formControlName="email" required>
+                </mat-form-field>
+                <mat-form-field class="form-field">
+                  <mat-label>Cellphone</mat-label>
+                    <input matInput [(ngModel)]="model.cellphone" placeholder="Cellphone" formControlName="cellphone" required>
+                </mat-form-field>
+                <mat-form-field class="form-field">
+                    <mat-label>Gender</mat-label>
+                    <mat-select [(ngModel)]="model.genderCode" name="genderCode"
+                    id="genderCode" formControlName="genderCode" required>
+                        <mat-option *ngFor="let gender of genders" [value]="gender.code">
+                          {{gender.name}}
+                        </mat-option>
+                      </mat-select>
+                </mat-form-field>
+                <mat-form-field class="form-field">
+                  <mat-label>Biography</mat-label>
+                  <textarea matInput id="biography" formControlName="biography"
+                            [(ngModel)]="model.biography"
+                            cdkTextareaAutosize
+                            #autosize="cdkTextareaAutosize"
+                            cdkAutosizeMinRows="1"
+                            cdkAutosizeMaxRows="5"></textarea>
+                </mat-form-field>
+            </div>
+            <div class="column">
+              <mat-form-field class="form-field">
+                <mat-label>ID/Passport/Registration No.</mat-label>
+                <input matInput [(ngModel)]="model.identityNumber" placeholder="ID/Passport/Registration No." formControlName="identityNumber" required>
+            </mat-form-field>
+                  <mat-form-field class="form-field">
+                    <mat-label>Credential Type</mat-label>
+                    <mat-select [(ngModel)]="model.credentialTypeCode" name="credentialTypeCode"
+                    id="credentialTypeCode" formControlName="credentialTypeCode" required>
+                        <mat-option *ngFor="let credentialType of credentialTypes" [value]="credentialType.code">
+                          {{credentialType.name}}
+                        </mat-option>
+                      </mat-select>
+                </mat-form-field>
+                <mat-form-field class="form-field">
+                  <mat-label>Password</mat-label>
+                    <input matInput type="password" [(ngModel)]="model.password" placeholder="Password" formControlName="password" required>
+                </mat-form-field>
+                <mat-form-field class="form-field">
+                  <mat-label>Date Of Birth</mat-label>
+                  <input matInput [matDatepicker]="dob" readonly [(ngModel)]="model.dateOfBirth" placeholder="Date Of Birth" [formControl]="dateOfBirth" [max]="today">
+                    <mat-datepicker-toggle matSuffix [for]="dob"></mat-datepicker-toggle>
+                    <mat-datepicker #dob></mat-datepicker>
+              </mat-form-field> 
+            </div>
+          </div>
+  <mat-card-actions>
+        <button mat-raised-button (click)="submit()"
+        class="nav-btn pull-right" [disabled]="!frmUserDetails.valid">Next</button>
+    </mat-card-actions>
+</form>
+</mat-card>

@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="form-container">
+      <h3 style="text-align: center;">Sign up</h3>
+      <p style="text-align: center;">Connect with laborers or customers who want to work with you</p>
+  <mat-horizontal-stepper linear #stepper>
+      <mat-step [stepControl]="frmUserDetails">
+          <ng-template matStepLabel>Details</ng-template>
+      <app-userdetails #UserdetailsComponent (goToNextStep)="goToNextStep()"></app-userdetails>
+      </mat-step>
+      <mat-step [stepControl]="frmUserAddress">
+          <ng-template matStepLabel>Address</ng-template>
+      <app-useraddress #UseraddressComponent (goToPreviousStep)="goToPreviousStep()" (goToNextStep)="goToNextStep()"></app-useraddress>
+      </mat-step>
+      <mat-step [stepControl]="frmDocument">
+        <ng-template matStepLabel>Documents</ng-template>
+    <app-userdocuments #UserdocumentsComponent (goToPreviousStep)="goToPreviousStep()" (goToNextStep)="goToNextStep()"></app-userdocuments>
+    </mat-step>
+    <mat-step [stepControl]="frmUserSkill">
+      <ng-template matStepLabel>Skills</ng-template>
+  <app-userskills #UserskillsComponent (goToPreviousStep)="goToPreviousStep()" (goToNextStep)="goToNextStep()"></app-userskills>
+  </mat-step>
+    <mat-step [stepControl]="frmUserQualification">
+      <ng-template matStepLabel>Qualifications</ng-template>
+  <app-userqualifications #UserqualificationsComponent (goToPreviousStep)="goToPreviousStep()" (goToNextStep)="goToNextStep()"></app-userqualifications>
+  </mat-step>
+  <mat-step [stepControl]="frmBankCard">
+        <ng-template matStepLabel>Bank cards</ng-template>
+    <app-userbankcards #UserbankcardsComponent (goToPreviousStep)="goToPreviousStep()" (goToNextStep)="goToNextStep()"></app-userbankcards>
+    </mat-step>
+  </mat-horizontal-stepper>
+  </div>
+  </div>
