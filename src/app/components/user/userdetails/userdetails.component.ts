@@ -22,7 +22,7 @@ import { Constants } from '../../../models/constants';
 
 const moment = _rollupMoment || _moment;
 
-export const MY_FORMATS = {
+export const DATE_FORMATS = {
   parse: {
     dateInput: 'LL',
   },
@@ -40,7 +40,7 @@ export const MY_FORMATS = {
   styleUrl: '../userStyle.css',
   providers: [
     {provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE]},
-    {provide: MAT_DATE_FORMATS, useValue: MY_FORMATS},
+    {provide: MAT_DATE_FORMATS, useValue: DATE_FORMATS},
   ],
 })
 export class UserdetailsComponent implements OnInit {   
@@ -75,7 +75,7 @@ export class UserdetailsComponent implements OnInit {
         genderCode: ['', Validators.required],
         credentialTypeCode: ['', Validators.required],
         biography: ['', Validators.required],
-        dateOfBirth: ['']
+        dateOfBirth: ['', Validators.required]
       });
   }
 

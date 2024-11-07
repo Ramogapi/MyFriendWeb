@@ -1,11 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { UserdetailsComponent } from '../userdetails/userdetails.component';
 import { UseraddressComponent } from '../useraddress/useraddress.component';
-import { UserdocumentComponent } from '../userdocument/userdocument.component';
-import { UserbankcardComponent } from '../userbankcard/userbankcard.component';
 import { MatStepper } from '@angular/material/stepper';
-import { UserskillComponent } from '../userskill/userskill.component';
-import { UserqualificationComponent } from '../userqualification/userqualification.component';
 import { UserdocumentsComponent } from '../userdocuments/userdocuments.component';
 import { UserbankcardsComponent } from '../userbankcards/userbankcards.component';
 import { UserskillsComponent } from '../userskills/userskills.component';

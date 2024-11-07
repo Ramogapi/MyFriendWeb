@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Qualification } from '../../../models/User/Qualification/qualification';
 import { CodeLookUp } from '../../../models/LookUp/codelookup';
 import { IdentityService } from '../../../services/identity.service';
@@ -10,16 +10,44 @@ import { CodeLookUpResponse } from '../../../models/LookUp/codelookupresponse';
 import { Failure } from '../../../models/Response/failure';
 import { Success } from '../../../models/Response/success';
 import { UserQualification } from '../../../models/User/Qualification/userqualification';
+import { DatePipe } from '@angular/common';
+import { MomentDateAdapter } from '@angular/material-moment-adapter';
+import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
+import * as _moment from 'moment';
+import {default as _rollupMoment} from 'moment';
+import { Constants } from '../../../models/constants';
+
+const moment = _rollupMoment || _moment;
+
+export const DATE_FORMATS = {
+  parse: {
+    dateInput: 'LL',
+  },
+  display: {
+    dateInput: Constants.DATE_ONLY,
+    monthYearLabel: 'YYYY',
+    dateA11yLabel: 'LL',
+    monthYearA11yLabel: 'YYYY',
+  },
+};
 
 @Component({
-  changeDetection: ChangeDetectionStrategy.Default,
   selector: 'app-userqualification',
   templateUrl: './userqualification.component.html',
-  styleUrl: '../userStyle.css'
+  styleUrl: '../userStyle.css',
+  providers: [
+    {provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE]},
+    {provide: MAT_DATE_FORMATS, useValue: DATE_FORMATS},
+  ],
 })
 export class UserqualificationComponent implements OnInit {
   @Output("goToNextStep") goToNextStep: EventEmitter<any> = new EventEmitter();
   @Output("ngOnInit") reload: EventEmitter<any> = new EventEmitter();
+
+  today = new Date();
+
+  start = new FormControl(moment());
+  end = new FormControl(moment());
 
   frmUserQualification: FormGroup = {} as FormGroup;
   public model: Qualification = new Qualification();
@@ -28,7 +56,7 @@ export class UserqualificationComponent implements OnInit {
   qualificationStatus: CodeLookUp[] = [];
   constructor(private identityService: IdentityService, 
     private storageService: StorageService, private laborerService: LaborerService,
-    private toastService: ToastService, private formBuilder: FormBuilder) {
+    private toastService: ToastService, private formBuilder: FormBuilder, private datePipe: DatePipe) {
       this.createForm();
   }
 
@@ -48,6 +76,8 @@ export class UserqualificationComponent implements OnInit {
   submitted = false;
 
   ngOnInit() {
+    this.frmUserQualification.get('start')?.setValue('');
+    this.frmUserQualification.get('end')?.setValue('');
     this.identityService.getCodeLookUps('Profession').subscribe((result: CodeLookUpResponse) => {
       this.professions = result.response;
     },error=>{

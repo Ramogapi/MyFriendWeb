@@ -17,12 +17,16 @@
                 </mat-form-field>
                 <mat-form-field class="form-field">
                     <mat-label>Start</mat-label>
-                    <input matInput [(ngModel)]="model.start" placeholder="Start" formControlName="start" required>
+                    <input matInput [matDatepicker]="start" readonly [(ngModel)]="model.start" placeholder="Start" [max]="today">
+                      <mat-datepicker-toggle matSuffix [for]="start"></mat-datepicker-toggle>
+                      <mat-datepicker #start></mat-datepicker>
                 </mat-form-field>
                 <mat-form-field class="form-field">
-                    <mat-label>end</mat-label>
-                    <input matInput [(ngModel)]="model.end" placeholder="End" formControlName="end" required>
-                </mat-form-field>                
+                    <mat-label>End</mat-label>
+                    <input matInput [matDatepicker]="end" readonly [(ngModel)]="model.end" placeholder="End" [max]="today">
+                      <mat-datepicker-toggle matSuffix [for]="end"></mat-datepicker-toggle>
+                      <mat-datepicker #end></mat-datepicker>
+                </mat-form-field>             
             </div>
             <div class="column">
                 <mat-form-field class="form-field">
