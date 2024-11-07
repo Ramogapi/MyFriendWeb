@@ -12,24 +12,29 @@
                       </mat-select>
                 </mat-form-field>
                 <mat-form-field class="form-field">
+                    <mat-label>Name</mat-label>
                     <input matInput [(ngModel)]="model.name" placeholder="Name" formControlName="name" required>
                 </mat-form-field>
                 <mat-form-field class="form-field">
+                    <mat-label>Start</mat-label>
                     <input matInput [(ngModel)]="model.start" placeholder="Start" formControlName="start" required>
                 </mat-form-field>
                 <mat-form-field class="form-field">
+                    <mat-label>end</mat-label>
                     <input matInput [(ngModel)]="model.end" placeholder="End" formControlName="end" required>
                 </mat-form-field>                
             </div>
             <div class="column">
                 <mat-form-field class="form-field">
+                    <mat-label>Institution</mat-label>
                     <input matInput [(ngModel)]="model.institution" placeholder="Institution" formControlName="institution" required>
                 </mat-form-field>
                 <mat-form-field class="form-field">
+                    <mat-label>Unique Identifier</mat-label>
                     <input matInput [(ngModel)]="model.uniqueIdentifier" placeholder="Unique Identifier" formControlName="uniqueIdentifier" required>
                 </mat-form-field>
                 <mat-form-field class="form-field">
-                    <mat-label>Profession</mat-label>
+                    <mat-label>Qualification Status</mat-label>
                     <mat-select [(ngModel)]="model.qualificationStatusCode" name="qualificationStatusCode"
                     id="qualificationStatusCode" formControlName="qualificationStatusCode" required>
                         <mat-option *ngFor="let qualificationStatusCode of qualificationStatus" [value]="qualificationStatusCode.code">
@@ -38,6 +43,7 @@
                       </mat-select>
                 </mat-form-field>
                   <mat-form-field class="form-field">
+                    <mat-label>Description</mat-label>
                     <input matInput [(ngModel)]="model.description" placeholder="Description" formControlName="description" required>
                 </mat-form-field>
             </div>

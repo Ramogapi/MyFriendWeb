@@ -22,9 +22,9 @@ export class IdentityService {
   processBaseUrl() {
     console.log("Web app host URL" + window.location.origin);
     if(window.location.origin == "http://localhost:4200"){
-        this.baseUrl = "https://localhost:7251/api/Identity";
+        this.baseUrl = "http://localhost:5006/api/Identity";
     } else {
-        this.baseUrl = "https://mi.frand.net/api/Identity";
+        this.baseUrl = "http://mi.frand.net/api/Identity";
     }
     console.log("API host URL: " + this.baseUrl);
   }

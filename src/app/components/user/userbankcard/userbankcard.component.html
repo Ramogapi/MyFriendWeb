@@ -3,14 +3,17 @@
         <div class="row">
             <div class="column">
                 <mat-form-field class="form-field">
+                    <mat-label>Card Number</mat-label>
                     <input matInput [(ngModel)]="model.cardNumber" placeholder="Card Number" formControlName="cardNumber" required>
                   </mat-form-field>
                   <mat-form-field class="form-field">
+                    <mat-label>Expiry Date</mat-label>
                       <input matInput [(ngModel)]="model.expiryDate" placeholder="Expiry Date" formControlName="expiryDate" required>
                   </mat-form-field>
             </div>
             <div class="column">
                   <mat-form-field class="form-field">
+                    <mat-label>CVV</mat-label>
                     <input matInput [(ngModel)]="model.cvv" placeholder="CVV" formControlName="cvv" required>
                 </mat-form-field>
             </div>
