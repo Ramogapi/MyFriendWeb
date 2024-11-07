@@ -8,33 +8,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-  }  
-  
-  .alert {
-    --bs-alert-bg: transparent;
-    --bs-alert-padding-x: unset!important;
-    --bs-alert-padding-y: unset!important;
-    --bs-alert-margin-bottom: 1rem;
-    --bs-alert-color: inherit;
-    --bs-alert-border-color: transparent;
-    --bs-alert-border: unset!important;
-    --bs-alert-border-radius: var(--bs-border-radius);
-    --bs-alert-link-color: inherit;
-    position: relative;
-    color: var(--bs-alert-color);
-    background-color: var(--bs-alert-bg);
-    border: var(--bs-alert-border);
-    border-radius: var(--bs-alert-border-radius);
-}
-
-.alert-danger {
-    --bs-alert-color: #cc2424!important;
-    --bs-alert-bg: unset!important;
-    --bs-alert-border-color: var(--bs-danger-border-subtle);
-    --bs-alert-link-color: var(--bs-danger-text-emphasis);
-    font-size: small;
-    font-weight: 500;
-}
+  }
 
 .form-container {
     background-color: white;
@@ -69,6 +43,32 @@
         padding: 5px;
     }
   }
+
+  .alert {
+    --bs-alert-bg: transparent;
+    --bs-alert-padding-x: unset!important;
+    --bs-alert-padding-y: unset!important;
+    --bs-alert-margin-bottom: 1rem;
+    --bs-alert-color: inherit;
+    --bs-alert-border-color: transparent;
+    --bs-alert-border: unset!important;
+    --bs-alert-border-radius: var(--bs-border-radius);
+    --bs-alert-link-color: inherit;
+    position: relative;
+    color: var(--bs-alert-color);
+    background-color: var(--bs-alert-bg);
+    border: var(--bs-alert-border);
+    border-radius: var(--bs-alert-border-radius);
+}
+
+.alert-danger {
+    --bs-alert-color: #cc2424!important;
+    --bs-alert-bg: unset!important;
+    --bs-alert-border-color: var(--bs-danger-border-subtle);
+    --bs-alert-link-color: var(--bs-danger-text-emphasis);
+    font-size: small;
+    font-weight: 500;
+}
   
   /* bottom container */
   .bottom-container {
@@ -171,7 +171,7 @@ input[type=submit] {
     background-color: #000;
     color: white;
     cursor: pointer;
-    border-radius: 10px;;
+    border-radius: 10px;
   }
   
   input[type=submit]:hover {
