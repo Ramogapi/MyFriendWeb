@@ -45,7 +45,7 @@ export class UseraddressComponent implements OnInit {
 
   public submit() {
     let user = JSON.parse(this.storageService.getUser()) as Success;
-    this.model.userId = user.response.value.id;
+    this.model.userId = user.response.id;
     console.log('model: ' + JSON.stringify(this.model));
     
     this.submitted = true;

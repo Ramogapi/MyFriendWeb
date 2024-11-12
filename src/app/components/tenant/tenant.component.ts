@@ -24,9 +24,9 @@ export class TenantComponent implements OnInit {
 
   ngOnInit(): void {
     var user = JSON.parse(this.storageService.getUser()) as Success;
-    this.userName = user.response.value.identifier;
+    this.userName = user.response.identifier;
 
-    this.userService.getUserUpload(user.response.value.id, 'PP').subscribe((result: UserUpload) => {
+    this.userService.getUserUpload(user.response.id, 'PP').subscribe((result: UserUpload) => {
       let response = result.response;
       let extension = "";
       const extensions = new Set(['jpg', 'gif', 'png'])
@@ -47,9 +47,9 @@ export class TenantComponent implements OnInit {
 
   public account() {
     var user = JSON.parse(this.storageService.getUser()) as Success;
-    if(user.response.value.roles.indexOf('C') > -1)
+    if(user.response.roles.indexOf('C') > -1)
       this.router.navigate(['/h/tenant-account']);
-    else if(user.response.value.roles.indexOf('L') > -1)
+    else if(user.response.roles.indexOf('L') > -1)
       this.router.navigate(['/h/tenant-account']);
   }  
 

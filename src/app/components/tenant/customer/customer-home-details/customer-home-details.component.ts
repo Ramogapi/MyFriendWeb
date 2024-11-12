@@ -1,11 +1,11 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { User } from '../../../../models/User/user';
+import { User } from '../../../../models/User/Profile/user';
 import { Upload } from '../../../../models/upload';
 import { StorageService } from '../../../../services/storage.service';
 import { IdentityService } from '../../../../services/identity.service';
 import { UserService } from '../../../../services/user.service';
 import { Success } from '../../../../models/Response/success';
-import { UserResponse } from '../../../../models/User/userresponse';
+import { UserResponse } from '../../../../models/User/Profile/userresponse';
 import { Failure } from '../../../../models/Response/failure';
 import { UserUpload } from '../../../../models/User/UserUpload/userupload';
 import { CodeLookUpResponse } from '../../../../models/LookUp/codelookupresponse';
@@ -41,9 +41,9 @@ export class CustomerHomeDetailsComponent implements OnInit {
   
     ngOnInit(): void {
       var user = JSON.parse(this.storageService.getUser()) as Success;
-      this.userName = user.response.value.identifier;
+      this.userName = user.response.identifier;
 
-      this.interest.userId = user.response.value.id;
+      this.interest.userId = user.response.id;
 
       this.identityService.getCodeLookUps('Profession').subscribe((result: CodeLookUpResponse) => {
         this.professions = result.response;
@@ -52,7 +52,7 @@ export class CustomerHomeDetailsComponent implements OnInit {
         console.log('failure: ' + JSON.stringify(failure));
       });
 
-      this.identityService.getUserDetails(user.response.value.id)
+      this.identityService.getUserDetails(user.response.id)
       .subscribe((result: UserResponse) => {
         this.model = result.response;
       },error=>{
@@ -60,7 +60,7 @@ export class CustomerHomeDetailsComponent implements OnInit {
         console.log('failure: ' + JSON.stringify(failure));
       });
 
-      this.userService.getUserInterests(user.response.value.id)
+      this.userService.getUserInterests(user.response.id)
       .subscribe((result: CodeLookUpResponse) => {
         this.interests = result.response;
       },error=>{
@@ -68,7 +68,7 @@ export class CustomerHomeDetailsComponent implements OnInit {
         console.log('failure: ' + JSON.stringify(failure));
       });
   
-      this.userService.getUserUpload(user.response.value.id, 'PP').subscribe((result: UserUpload) => {
+      this.userService.getUserUpload(user.response.id, 'PP').subscribe((result: UserUpload) => {
         let response = result.response;
         let extension = "";
         const extensions = new Set(['jpg', 'gif', 'png'])

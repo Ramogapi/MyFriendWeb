@@ -6,7 +6,6 @@ import { IdentityService } from '../../../services/identity.service';
 import { StorageService } from '../../../services/storage.service';
 import { Failure } from '../../../models/Response/failure';
 import { Register } from '../../../models/Identity/register';
-import { Access } from '../../../models/Response/access';
 import { Success } from '../../../models/Response/success';
 import { Router } from '@angular/router';
 import { ToastService } from '../../../services/toast.service';
@@ -54,7 +53,6 @@ export class UserdetailsComponent implements OnInit {
   dateOfBirth = new FormControl(moment());
   frmUserDetails: FormGroup = {} as FormGroup;
   message: String = '';
-  user : Access = new Access();
   genders: CodeLookUp[] = [];
   countries: CodeLookUp[] = [];
   credentialTypes: CodeLookUp[] = [];
@@ -116,9 +114,9 @@ export class UserdetailsComponent implements OnInit {
                .subscribe(result=>{
                 debugger;
                 let success = result as Success;
-                this.tokenService.saveToken(success.response.value.token);
+                this.tokenService.saveToken(success.response.token);
                 this.tokenService.saveUser(success);
-                this.interest.userId = success.response.value.id;
+                this.interest.userId = success.response.id;
                 this.saveInterests();
                },error=>{
                 debugger;

@@ -95,7 +95,7 @@ export class UserqualificationComponent implements OnInit {
   public submit() {
     debugger;
     let user = JSON.parse(this.storageService.getUser()) as Success;
-    this.model.workerId = user.response.value.id;
+    this.model.workerId = user.response.id;
 
     console.log('model: ' + JSON.stringify(this.model));
     

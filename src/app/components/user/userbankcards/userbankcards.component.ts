@@ -34,7 +34,7 @@ export class UserbankcardsComponent implements OnInit {
 
   ngOnInit() {
     let user = JSON.parse(this.storageService.getUser()) as Success;
-    this.userService.getBankCards(user.response.value.id).subscribe((result: UserBankCards) => {
+    this.userService.getBankCards(user.response.id).subscribe((result: UserBankCards) => {
       this.dataSource = result.response;
     },error=>{
       let failure = error.error as Failure;

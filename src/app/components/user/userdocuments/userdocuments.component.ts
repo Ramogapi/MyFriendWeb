@@ -32,7 +32,7 @@ export class UserdocumentsComponent implements OnInit {
 
   ngOnInit() {
     let user = JSON.parse(this.storageService.getUser()) as Success;
-    let userId = user.response.value.id;
+    let userId = user.response.id;
     this.userService.getUserUploads(userId).subscribe((result: UserUploads) => {
       this.dataSource = result.response;
     },error=>{

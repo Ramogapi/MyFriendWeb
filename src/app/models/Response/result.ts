@@ -1,6 +1,8 @@
-import { Access } from "./access";
-
 export class Result{
-    value!: Access;
-    statusCode!: string;
+    id!: string;
+    token!: string;
+    identifier!: string;
+    roles!: string[];
+    expiration!: string;
+    type!: string;
 }

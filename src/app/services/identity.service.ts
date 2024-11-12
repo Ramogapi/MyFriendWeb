@@ -7,7 +7,7 @@ import { ChangePassword } from '../models/Identity/changepassword';
 import { ForgotPassword } from '../models/Identity/forgotpassword';
 import { Observable } from 'rxjs';
 import { CodeLookUpResponse } from '../models/LookUp/codelookupresponse';
-import { UserResponse } from '../models/User/userresponse';
+import { UserResponse } from '../models/User/Profile/userresponse';
 
 @Injectable({
   providedIn: 'root'

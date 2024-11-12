@@ -35,7 +35,7 @@ export class UserskillsComponent {
 
   ngOnInit() {
     let user = JSON.parse(this.storageService.getUser()) as Success;
-    this.laborerService.getSkills(user.response.value.id).subscribe((result: UserSkills) => {
+    this.laborerService.getSkills(user.response.id).subscribe((result: UserSkills) => {
       this.dataSource = result.response;
     },error=>{
       let failure = error.error as Failure;
